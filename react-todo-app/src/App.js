@@ -113,7 +113,7 @@ export default function App() {
             </li>
 
             <li>
-              <a href="https://eckeecke.github.io/jsdemos.html">Demos</a>
+              <a href="https://adoring-galileo-71fde2.netlify.app/">React Todo App</a>
             </li>
           </ul>
         </div>
