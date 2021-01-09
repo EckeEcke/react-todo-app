@@ -1,0 +1,137 @@
+* {
+  font-family: Helvetica;
+  font-size: 1em;
+}
+
+.App {
+  text-align: left;
+  font-family: Helvetica;
+  color: white;
+}
+
+
+
+
+.App-header {
+  background-image: linear-gradient(to right, #0cebeb, #20e3b2, #29ffc6);
+  width: 100vw;
+  min-height: 100vh;
+  margin: 0 auto;
+  z-index: 0;
+}
+
+
+
+.App-button {
+  border: none;
+  height: 36px;
+  width: 100px;
+  vertical-align: middle;
+  background-color: limegreen;
+  color: white;
+
+}
+
+.todoInput {
+  height: 34px;
+  width: 240px;
+  border: none;
+  vertical-align: middle;
+  padding-left: 4px;
+}
+
+.open {
+  text-decoration: none;
+  background-color: orange;
+}
+
+.done {
+  text-decoration: line-through;
+  background-color: limegreen;
+  opacity: 0.6;
+}
+
+#hamburger {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background-color:  #29ffc6;
+  padding: 5px;
+  z-index: 3000;
+  border-style: none;
+}
+
+.line1, .line2, .line3 {
+  width: 40px;
+  height: 6px;
+  margin: 8px;
+  background-color: white;
+  border-radius: 20px;
+}
+
+
+
+#burger-menu {
+
+  position: fixed;
+  background-color: white;
+  right: 0px;
+  top: 0px;
+  padding: 100px 80px 100px 0px;
+  border-left: 1px solid black;
+  transition: 0.5s;
+}
+
+#burger-menu a {
+  text-decoration: none;
+  color: black;
+  font-size: 1.3em;
+}
+
+#burger-menu li {
+  list-style: none;
+  padding: 16px 4px;
+  border-bottom: 1px solid black;
+  background-image: linear-gradient(to right, white, white, white, white, white, white, white);
+}
+
+#burger-menu li:hover{
+  animation: nav-animation 0.3s linear;
+  animation-fill-mode: forwards;
+  transition: 0.1s;
+  color: white;
+}
+
+#burger-menu a:hover {
+  color: white;
+  transition: 0.1s;
+}
+
+.nav-line {
+  background-color: black;
+  height: 1px;
+  border: none;
+}
+
+.show-menu {
+  height: 100vh;
+  opacity: 0.99;
+  z-index: 2500;
+}
+
+.no-show {
+  height: 0vh;
+  opacity: 0;
+  z-index: -3000;
+}
+
+@keyframes nav-animation {
+  0% {background-image: linear-gradient(to right, white, white, white, white, white, white, white);}
+  15% {background-image: linear-gradient(to right, #29ffc6, white, white, white, white, white, white);}
+  30% {background-image: linear-gradient(to right, #29ffc6, #29ffc6, white, white, white, white, white);}
+  45% {background-image: linear-gradient(to right, #29ffc6, #29ffc6, #29ffc6, white, white, white, white);}
+  60% {background-image: linear-gradient(to right, #29ffc6, #29ffc6, #29ffc6, #29ffc6, white, white, white);}
+  75% {background-image: linear-gradient(to right, #29ffc6, #29ffc6, #29ffc6, #29ffc6, #29ffc6, white, white);}
+  85% {background-image: linear-gradient(to right, #29ffc6, #29ffc6, #29ffc6, #29ffc6, #29ffc6, #29ffc6, white);}
+  100% {background-image: linear-gradient(to right, #29ffc6, #29ffc6, #29ffc6, #29ffc6, #29ffc6, #29ffc6, #29ffc6);}
+}
