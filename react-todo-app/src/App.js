@@ -95,13 +95,13 @@ export default function App() {
 
           <br></br>
           
-          <Form text = {text} getInput = {getInput} updateInput = {updateInput} updateFilter = {updateFilter} />
+          <Form text = {text} getInput = {getInput} updateInput = {updateInput}  />
 
           <br></br>
 
           
           {todos.length>0 &&
-              <Todolist todos = {todos} filter = {filter} lineText = {lineText} removeTodo = {removeTodo} />
+              <Todolist todos = {todos} filter = {filter} lineText = {lineText} removeTodo = {removeTodo} updateFilter = {updateFilter} />
             }
           
           </center>

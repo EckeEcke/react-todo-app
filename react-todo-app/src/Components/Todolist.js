@@ -2,7 +2,6 @@ import React from "react";
 
 export default function Todolist(props){
     return(
-
         <ul style={{padding: "30px 0", maxWidth: "360px", backgroundColor: "rgb(255,255,255,0.95)"}}>
               
               {props.filter === "none" && props.todos.map((todo, index) => {
@@ -35,6 +34,23 @@ export default function Todolist(props){
                   )}  
                   )}
 
+                    
+                <br></br>
+                <br></br> 
+
+
+            <div style={{backgroundColor: "limegreen", width: "90%", padding: "20px 0"}}>
+            <label>Filter by status</label>
+      
+            <select id="filter" onChange={props.updateFilter}>
+                <option value="none">all</option>
+                <option value="open">open</option>
+                <option value="done">done</option>
+            </select>
+            </div>
+            
+         
+              
         </ul>
 
     )

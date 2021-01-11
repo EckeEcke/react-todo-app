@@ -25,25 +25,32 @@
 .App-button {
   border: none;
   height: 40px;
-  width: 120px;
+  width: 100px;
   vertical-align: middle;
   background-color: limegreen;
   color: white;
   padding: 4px;
-  margin: 10px;
+  margin-left: 20px;
 
 }
 
 .todoInput {
   height: 40px;
   width: 240px;
-  border: none;
   vertical-align: middle;
   padding: 4px;
 }
 
 label {
   font-size: 1.1em;
+}
+
+select {
+  float: right;
+  margin-right: 10px;
+  width: 80px;
+  background-color: limegreen;
+  color: white;
 }
 
 .open {
