@@ -3,13 +3,20 @@ import React from "react";
 export default function Form(props){
     return(
         <form>
-              <input type="text" className="todoInput" value={props.text} onChange={props.updateInput} placeholder="Enter todo" maxlength="22"></input>
-              <button className="App-button" onClick={props.getInput}><b>+</b> Add todo</button>
-              <br></br>
+        
+              <input style={{height: "40px", width: "200px"}} type="text" value={props.text} onChange={props.updateInput} placeholder="Enter todo" maxlength="22"></input>
+              <button class="App-button" onClick={props.getInput}><b>+</b> Add</button>
+        
+              
               
               <br></br>
-              <label style={{display:"inline-block", width:"244px", textAlign: "left", backgroundColor:"white", color:"black", padding:"8px 0", paddingLeft:"4px"}}>Filter by status</label>
-              <select style={{display:"inline-block", width: "100px", padding:"7px 8px 8px", backgroundColor:"limegreen", color:"white", border:"none"}} id="filter" onChange={props.updateFilter}>
+              <br></br>
+
+              <div style={{width: "200px", display: "inline-block"}}>
+                <label>Filter by status</label>
+              </div>
+              
+              <select className="App-button" id="filter" onChange={props.updateFilter}>
                 <option value="none">all</option>
                 <option value="open">open</option>
                 <option value="done">done</option>
