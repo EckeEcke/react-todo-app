@@ -84,13 +84,12 @@ export default function App() {
             }
           
           </center>
-
+          <br></br><br></br>
       </div>
       
      
     
         
-
 
     </div>
   )

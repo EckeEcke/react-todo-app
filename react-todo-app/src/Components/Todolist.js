@@ -13,11 +13,10 @@ export default function Todolist(props){
         
         <ul style={{padding: "10px 0", width: "96vw", maxWidth: "380px", backgroundColor: "rgb(255,255,255,0.95)"}}>
         <h3>Open Todos: {openTodos.length}/{props.todos.length}</h3>
-        <br></br>
+        
 
             
-            
-            
+        
 
             <div style={{minHeight:"180px"}}>
             
@@ -45,10 +44,9 @@ export default function Todolist(props){
               <br></br>
               <br></br>
               <hr></hr>
+              
               <h3>Done</h3>
-              <br></br>
-
-      
+     
               {doneTodos.map((filteredTodo, index) => {
                   
                   return(
