@@ -20,7 +20,9 @@
   z-index: 0;
 }
 
-
+h3 {
+  color: black;
+}
 
 .App-button {
   border: none;

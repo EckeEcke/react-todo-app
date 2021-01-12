@@ -1,58 +1,51 @@
 import React from "react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTrash } from '@fortawesome/free-solid-svg-icons';
 
 export default function Todolist(props){
-    return(
-        <ul style={{padding: "30px 0", width: "100vw", maxWidth: "380px", backgroundColor: "rgb(255,255,255,0.95)"}}>
-              
-              {props.filter === "none" && props.todos.map((todo, index) => {
-                  
-                  return(
-                    <li key={index} style={{listStyle: "none", marginBottom: "2px"}}>
-                      <button  className={todo.status} style={{minWidth: "270px", borderStyle: "none", padding: "10px", color: "white"}} id={todo.id} onClick={props.lineText}>{todo.text}</button>
-                      <button  style={{position: "absolute", borderStyle: "none", background: "none", height: "36px"}} id={todo.id} onClick={props.removeTodo}>🗑️</button>
-                    </li>
-                  )}  
-                  )}
 
-              {props.filter === "open" && props.todos.filter(todo => todo.status === "open").map((openTodo, index) => {
+    const openTodos = props.todos.filter(todo => todo.status === "open");
+
+
+    return(
+        <div style={{backgroundColor: "white", width: "96vw", maxWidth: "380px"}}>
+        
+        <ul style={{padding: "10px 0", width: "96vw", maxWidth: "380px", backgroundColor: "rgb(255,255,255,0.95)"}}>
+        <h3>Open Todos: {openTodos.length}/{props.todos.length}</h3>
+        <br></br>
+
+              {openTodos.map((openTodo, index) => {
                   
                   return(
                     <li key={index} style={{listStyle: "none", marginBottom: "2px"}}>
                       <button  className={openTodo.status} style={{minWidth: "270px", borderStyle: "none", padding: "10px", color: "white"}} id={openTodo.id} onClick={props.lineText}>{openTodo.text}</button>
-                      <button  style={{position: "absolute", borderStyle: "none", background: "none", height: "36px"}} id={openTodo.id} onClick={props.removeTodo}>🗑️</button>
+                      <button  style={{position: "absolute", borderStyle: "none", background: "none", height:"36px", fontSize:"1.4em"}} id={openTodo.id} onClick={props.removeTodo}><FontAwesomeIcon icon={faTrash} color="grey" /></button>
                     </li>
                   )}  
                   )}
 
-              {props.filter === "done" && props.todos.filter(todo => todo.status === "done").map((filteredTodo, index) => {
+              <br></br>
+              <br></br>
+              <hr></hr>
+              <h3>Done</h3>
+              <br></br>
+
+      
+              {props.todos.filter(todo => todo.status === "done").map((filteredTodo, index) => {
                   
                   return(
                     <li key={index} style={{listStyle: "none", marginBottom: "2px"}}>
                       <button  className={filteredTodo.status} style={{minWidth: "270px", borderStyle: "none", padding: "10px", color: "white"}} id={filteredTodo.id} onClick={props.lineText}>{filteredTodo.text}</button>
-                      <button  style={{position: "absolute", borderStyle: "none", background: "none", height: "36px", float:"right", marginRight:"8px"}} id={filteredTodo.id} onClick={props.removeTodo}>🗑️</button>
+                      <button  style={{position: "absolute", borderStyle: "none", background: "none", paddingLeft:"6px", height:"36px", fontSize:"1.4em"}} id={filteredTodo.id} onClick={props.removeTodo}><FontAwesomeIcon icon={faTrash} color="grey" /></button>
                     </li>
                   )}  
                   )}
-
-                    
-                <br></br>
-                <br></br> 
-
-
-            <div style={{backgroundColor: "limegreen", width: "270px", padding: "10px 0"}}>
-            <label>Filter by status</label>
-      
-            <select id="filter" onChange={props.updateFilter}>
-                <option value="none">all</option>
-                <option value="open">open</option>
-                <option value="done">done</option>
-            </select>
-            </div>
             
          
               
         </ul>
 
+        </div>
     )
 }
 

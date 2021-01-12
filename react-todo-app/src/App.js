@@ -13,10 +13,9 @@ export default function App() {
 
 
   const [todos, setAllTodos] = useState([]);
-  const [filter, setFilter] = useState("none");
   const [text, setInput] = useState("");
-  const [count, setCounter] = useState(0);
   const [todoID, setID] = useState(0);
+  const [count, setCounter] = useState(0);
 
 
   function updateInput(event){
@@ -32,11 +31,6 @@ export default function App() {
         }
     }
  
-  const updateFilter = event => {
-        setFilter(event.target.value);
-  }
-
-
 
   const addTodo = newTodo => {
     setAllTodos(todos => [...todos, newTodo]);
@@ -58,17 +52,10 @@ export default function App() {
       todos[foundIndex].status = "open";
       setAllTodos(todos);
       setCounter(count+1);
-      if(filter=="none"){
-        event.target.className = "open";
-      }
-
     } else if(todos[foundIndex].status == "open"){
       todos[foundIndex].status = "done";
       setAllTodos(todos);
-      setCounter(count+1);
-      if(filter=="none"){
-        event.target.className = "done";
-      }     
+      setCounter(count+1); 
     }
 }
 
@@ -101,7 +88,7 @@ export default function App() {
 
           
           {todos.length>0 &&
-              <Todolist todos = {todos} filter = {filter} lineText = {lineText} removeTodo = {removeTodo} updateFilter = {updateFilter} />
+              <Todolist todos = {todos} count = {count+1} lineText = {lineText} removeTodo = {removeTodo} />
             }
           
           </center>
