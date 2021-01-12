@@ -153,6 +153,22 @@ select {
   z-index: -3000;
 }
 
+
+.completion-div {
+  opacity: 1;
+  animation: showCompletion 1s linear;
+  animation-fill-mode: forwards;
+}
+
+@keyframes showCompletion {
+  0% {opacity: 0.1};
+  100% {opacity: 1}
+}
+
+
+
+
+
 @keyframes nav-animation {
   0% {background-image: linear-gradient(to right, white, white, white, white, white, white, white);}
   15% {background-image: linear-gradient(to right, #29ffc6, white, white, white, white, white, white);}

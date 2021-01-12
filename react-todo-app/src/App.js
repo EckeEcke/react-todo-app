@@ -84,7 +84,6 @@ export default function App() {
           
           <Form text = {text} getInput = {getInput} updateInput = {updateInput}  />
 
-          <br></br>
 
           
           {todos.length>0 &&
