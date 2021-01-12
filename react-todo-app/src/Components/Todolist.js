@@ -2,14 +2,14 @@ import React from "react";
 
 export default function Todolist(props){
     return(
-        <ul style={{padding: "30px 0", maxWidth: "360px", backgroundColor: "rgb(255,255,255,0.95)"}}>
+        <ul style={{padding: "30px 0", width: "100vw", maxWidth: "380px", backgroundColor: "rgb(255,255,255,0.95)"}}>
               
               {props.filter === "none" && props.todos.map((todo, index) => {
                   
                   return(
                     <li key={index} style={{listStyle: "none", marginBottom: "2px"}}>
-                      <button  className={todo.status} style={{marginLeft:"30px", minWidth: "280px", borderStyle: "none", padding: "10px", color: "white", boxShadow: "rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px"}} id={todo.id} onClick={props.lineText}>{todo.text}</button>
-                      <button  style={{borderStyle: "none", background: "none", height: "36px"}} id={todo.id} onClick={props.removeTodo}>🗑️</button>
+                      <button  className={todo.status} style={{minWidth: "270px", borderStyle: "none", padding: "10px", color: "white"}} id={todo.id} onClick={props.lineText}>{todo.text}</button>
+                      <button  style={{position: "absolute", borderStyle: "none", background: "none", height: "36px"}} id={todo.id} onClick={props.removeTodo}>🗑️</button>
                     </li>
                   )}  
                   )}
@@ -18,8 +18,8 @@ export default function Todolist(props){
                   
                   return(
                     <li key={index} style={{listStyle: "none", marginBottom: "2px"}}>
-                      <button  className={openTodo.status} style={{marginLeft:"30px", minWidth: "280px", borderStyle: "none", padding: "10px", color: "white", boxShadow: "rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px"}} id={openTodo.id} onClick={props.lineText}>{openTodo.text}</button>
-                      <button  style={{borderStyle: "none", background: "none", height: "36px"}} id={openTodo.id} onClick={props.removeTodo}>🗑️</button>
+                      <button  className={openTodo.status} style={{minWidth: "270px", borderStyle: "none", padding: "10px", color: "white"}} id={openTodo.id} onClick={props.lineText}>{openTodo.text}</button>
+                      <button  style={{position: "absolute", borderStyle: "none", background: "none", height: "36px"}} id={openTodo.id} onClick={props.removeTodo}>🗑️</button>
                     </li>
                   )}  
                   )}
@@ -28,8 +28,8 @@ export default function Todolist(props){
                   
                   return(
                     <li key={index} style={{listStyle: "none", marginBottom: "2px"}}>
-                      <button  className={filteredTodo.status} style={{marginLeft:"30px", minWidth: "280px", borderStyle: "none", padding: "10px", color: "white", boxShadow: "rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px"}} id={filteredTodo.id} onClick={props.lineText}>{filteredTodo.text}</button>
-                      <button  style={{borderStyle: "none", background: "none", height: "36px"}} id={filteredTodo.id} onClick={props.removeTodo}>🗑️</button>
+                      <button  className={filteredTodo.status} style={{minWidth: "270px", borderStyle: "none", padding: "10px", color: "white"}} id={filteredTodo.id} onClick={props.lineText}>{filteredTodo.text}</button>
+                      <button  style={{position: "absolute", borderStyle: "none", background: "none", height: "36px", float:"right", marginRight:"8px"}} id={filteredTodo.id} onClick={props.removeTodo}>🗑️</button>
                     </li>
                   )}  
                   )}
@@ -39,7 +39,7 @@ export default function Todolist(props){
                 <br></br> 
 
 
-            <div style={{backgroundColor: "limegreen", width: "280px", padding: "10px 0"}}>
+            <div style={{backgroundColor: "limegreen", width: "270px", padding: "10px 0"}}>
             <label>Filter by status</label>
       
             <select id="filter" onChange={props.updateFilter}>
