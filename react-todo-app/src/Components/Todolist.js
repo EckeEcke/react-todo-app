@@ -19,7 +19,7 @@ export default function Todolist(props){
                   return(
                     <li key={index} style={{listStyle: "none", marginBottom: "2px"}}>
                       <button  className={openTodo.status} style={{minWidth: "270px", borderStyle: "none", padding: "10px", color: "white"}} id={openTodo.id} onClick={props.lineText}>{openTodo.text}</button>
-                      <button  style={{position: "absolute", borderStyle: "none", background: "none", height:"36px", fontSize:"1.4em"}} id={openTodo.id} onClick={props.removeTodo}><FontAwesomeIcon icon={faTrash} color="grey" /></button>
+                      <button  style={{position: "absolute", borderStyle: "none", background: "none", height:"40px", fontSize:"1.6em", paddingLeft:"4px"}} id={openTodo.id} onClick={props.removeTodo}><FontAwesomeIcon icon={faTrash} color="grey" /></button>
                     </li>
                   )}  
                   )}
@@ -36,7 +36,7 @@ export default function Todolist(props){
                   return(
                     <li key={index} style={{listStyle: "none", marginBottom: "2px"}}>
                       <button  className={filteredTodo.status} style={{minWidth: "270px", borderStyle: "none", padding: "10px", color: "white"}} id={filteredTodo.id} onClick={props.lineText}>{filteredTodo.text}</button>
-                      <button  style={{position: "absolute", borderStyle: "none", background: "none", height:"36px", fontSize:"1.4em"}} id={filteredTodo.id} onClick={props.removeTodo}><FontAwesomeIcon icon={faTrash} color="grey" /></button>
+                      <button  style={{position: "absolute", borderStyle: "none", background: "none", height:"40px", fontSize:"1.6em", paddingLeft:"4px"}} id={filteredTodo.id} onClick={props.removeTodo}><FontAwesomeIcon icon={faTrash} color="grey" /></button>
                     </li>
                   )}  
                   )}
