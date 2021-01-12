@@ -5,22 +5,24 @@ import React, {useState} from "react";
 export default function Navigation(){
 
     const [menuShown, toggleShowMenu] = useState("no-show");
+    const [burgerBackground, toggleBurger] = useState("hamburger");
 
-    function showMenu(){
+    function showMenu(event){
         if (menuShown == "no-show") {
         toggleShowMenu("show-menu");
+        toggleBurger("greenburger");
         }
         
         if(menuShown == "show-menu"){
         toggleShowMenu("no-show");
-    
+        toggleBurger("hamburger");
         }
     }
 
     return(
         <nav>
  
-        <button id="hamburger" onClick={showMenu}>
+        <button className={burgerBackground} onClick={showMenu}>
           <div className="line1"></div>
           <div className="line2"></div>
           <div className="line3"></div>

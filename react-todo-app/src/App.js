@@ -68,14 +68,7 @@ export default function App() {
 
         <Navigation />
 
-
-        <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
-
-      
+          <br></br>
           <center>
 
           <h1 style={{fontSize:"24pt"}}>Todo List</h1>
