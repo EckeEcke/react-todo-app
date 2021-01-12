@@ -39,7 +39,7 @@ export default function Todolist(props){
                 <br></br> 
 
 
-            <div style={{backgroundColor: "limegreen", width: "90%", padding: "20px 0"}}>
+            <div style={{backgroundColor: "limegreen", width: "280px", padding: "10px 0"}}>
             <label>Filter by status</label>
       
             <select id="filter" onChange={props.updateFilter}>
