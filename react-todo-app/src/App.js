@@ -1,4 +1,4 @@
-import React, {useState, useEffect } from "react";
+import React, {useState} from "react";
 import './App.css';
 import Navigation from "./Components/Navigation.js";
 import Form from "./Components/Form.js";
@@ -30,20 +30,22 @@ export default function App() {
 
   const addTodo = newTodo => {
     setAllTodos(todos => [...todos, newTodo]);
-    localStorage.setItem("todos", JSON.stringify(todos));
   }
 
 
 
  function removeTodo(event) {
-      const foundIndex = todos.findIndex(todo => todo.id === event.target.id);
+      console.log(todos);
+      console.log(event.currentTarget.id);
+      const foundIndex = todos.findIndex(todo => todo.id == event.currentTarget.id);
+      console.log(foundIndex);
       let listToSplice = [...todos];
       listToSplice.splice(foundIndex, 1);
       setAllTodos(listToSplice);
   }
 
   function lineText(event){
-    const foundIndex = todos.findIndex(todo => todo.id == event.target.id);
+    const foundIndex = todos.findIndex(todo => todo.id == event.currentTarget.id);
 
     if(todos[foundIndex].status === "done"){
       todos[foundIndex].status = "open";

@@ -32,7 +32,7 @@ export default function Todolist(props){
               {openTodos.map((openTodo, index) => {
                   
                   return(
-                    <li key={index} className="todo-listitem">
+                    <li key={index} id={openTodo.id} className="todo-listitem">
                       <button  className={openTodo.status}  id={openTodo.id} onClick={props.lineText}>{openTodo.text}</button>
                       <button  className="delete-BTN" id={openTodo.id} onClick={props.removeTodo}><FontAwesomeIcon icon={faTrash} color="grey" /></button>
                     </li>
@@ -49,7 +49,7 @@ export default function Todolist(props){
               {doneTodos.map((filteredTodo, index) => {
                   
                   return(
-                    <li key={index} className="todo-listitem">
+                    <li key={index} id={filteredTodo.id} className="todo-listitem">
                       <button  className={filteredTodo.status} id={filteredTodo.id} onClick={props.lineText}>{filteredTodo.text}</button>
                       <button  className="delete-BTN" id={filteredTodo.id} onClick={props.removeTodo}><FontAwesomeIcon icon={faTrash} color="grey" /></button>
                     </li>
