@@ -9,19 +9,18 @@ export default function Todolist(props){
 
 
     return(
-        <div style={{backgroundColor: "white", width: "96vw", maxWidth: "380px"}}>
+        <div className="todolist-background">
         
-        <ul style={{padding: "10px 0", width: "96vw", maxWidth: "380px", backgroundColor: "rgb(255,255,255,0.95)"}}>
+        <ul>
         <h3>Open Todos: {openTodos.length}/{props.todos.length}</h3>
         
-
-            
         
 
-            <div style={{minHeight:"180px"}}>
+            <div className="open-todos-div">
             
               {props.todos.length>0 && openTodos.length === 0 && 
-                <div className="completion-div" style={{color: "black", fontSize:"2em"}}>
+                <div className="completion-div">
+                  <br></br>
                   Well done! 
                   <br></br>
                   All tasks completed!
@@ -33,9 +32,9 @@ export default function Todolist(props){
               {openTodos.map((openTodo, index) => {
                   
                   return(
-                    <li key={index} style={{listStyle: "none", marginBottom: "2px"}}>
-                      <button  className={openTodo.status} style={{minWidth: "220px", borderStyle: "none", padding: "10px", color: "white"}} id={openTodo.id} onClick={props.lineText}>{openTodo.text}</button>
-                      <button  style={{position: "absolute", borderStyle: "none", background: "none", height:"40px", fontSize:"1.6em", paddingLeft:"4px"}} id={openTodo.id} onClick={props.removeTodo}><FontAwesomeIcon icon={faTrash} color="grey" /></button>
+                    <li key={index} className="todo-listitem">
+                      <button  className={openTodo.status}  id={openTodo.id} onClick={props.lineText}>{openTodo.text}</button>
+                      <button  className="delete-BTN" id={openTodo.id} onClick={props.removeTodo}><FontAwesomeIcon icon={faTrash} color="grey" /></button>
                     </li>
                   )}  
                   )}
@@ -44,15 +43,15 @@ export default function Todolist(props){
               <br></br>
               <br></br>
               <hr></hr>
-              
+
               <h3>Done</h3>
      
               {doneTodos.map((filteredTodo, index) => {
                   
                   return(
-                    <li key={index} style={{listStyle: "none", marginBottom: "2px"}}>
-                      <button  className={filteredTodo.status} style={{minWidth: "270px", borderStyle: "none", padding: "10px", color: "white"}} id={filteredTodo.id} onClick={props.lineText}>{filteredTodo.text}</button>
-                      <button  style={{position: "absolute", borderStyle: "none", background: "none", height:"40px", fontSize:"1.6em", paddingLeft:"4px"}} id={filteredTodo.id} onClick={props.removeTodo}><FontAwesomeIcon icon={faTrash} color="grey" /></button>
+                    <li key={index} className="todo-listitem">
+                      <button  className={filteredTodo.status} id={filteredTodo.id} onClick={props.lineText}>{filteredTodo.text}</button>
+                      <button  className="delete-BTN" id={filteredTodo.id} onClick={props.removeTodo}><FontAwesomeIcon icon={faTrash} color="grey" /></button>
                     </li>
                   )}  
                   )}

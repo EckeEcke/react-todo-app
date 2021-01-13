@@ -23,6 +23,8 @@ h3 {
   color: black;
 }
 
+/*Form*/
+
 .App-button {
   border: none;
   height: 40px;
@@ -40,43 +42,84 @@ h3 {
   background-color: rgb(50, 180, 50);
 }
 
-.todoInput {
-  height: 40px;
-  width: 240px;
-  vertical-align: middle;
-  padding: 0;
-  line-height: 40px;
+.todo-input {
+  height: 40px; 
+  width: 270px; 
+  max-width: 60%; 
+  border: 0
 }
 
 button {
   display: inline-block;
 }
 
+
+/*Todolist*/
+
+ul {
+  padding: 10px 0; 
+  width: 92vw; 
+  max-width: 380px; 
+  background-color: rgb(255,255,255,0.95);
+}
+
+.todo-listitem {
+  list-style: none; 
+  margin-bottom: 2px
+} 
+
 label {
   font-size: 1.1em;
 }
 
-select {
-  float: right;
-  margin-right: 10px;
-  width: 80px;
-  background-color: limegreen;
-  color: white;
-  border: 2px solid white;
-  vertical-align: top;
+.todolist-background {
+  background-color: white; 
+  width: 92vw; 
+  max-width: 380px
+}
+
+.open-todos-div {
+  min-height: 180px
 }
 
 .open {
+  min-width: 270px; 
+  border-style: none; 
+  padding: 10px; 
+  color: white;
   text-decoration: none;
   background-color: #f9812a;
   opacity: 0.95;
 }
 
 .done {
+  min-width: 270px; 
+  border-style: none; 
+  padding: 10px; 
+  color: white;
   text-decoration: line-through;
   background-color: limegreen;
   opacity: 0.6;
 }
+
+.completion-div {
+  color: black; 
+  font-size: 2em;
+  opacity: 1;
+  animation: showCompletion 1s linear;
+  animation-fill-mode: forwards;
+}
+
+.delete-BTN {
+  position: absolute; 
+  border-style: none; 
+  background: none; 
+  height: 40px; 
+  font-size: 1.6em;
+  padding-left: 4px
+}
+
+/*Navigation*/
 
 .hamburger {
   position: absolute;
@@ -165,11 +208,7 @@ select {
 }
 
 
-.completion-div {
-  opacity: 1;
-  animation: showCompletion 1s linear;
-  animation-fill-mode: forwards;
-}
+
 
 
 

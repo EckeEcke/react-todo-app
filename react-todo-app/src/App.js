@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState, useEffect } from "react";
 import './App.css';
 import Navigation from "./Components/Navigation.js";
 import Form from "./Components/Form.js";
@@ -6,11 +6,7 @@ import Todolist from "./Components/Todolist.js";
 
 
 export default function App() {
-
-
-
   
-
 
   const [todos, setAllTodos] = useState([]);
   const [text, setInput] = useState("");
@@ -34,12 +30,13 @@ export default function App() {
 
   const addTodo = newTodo => {
     setAllTodos(todos => [...todos, newTodo]);
+    localStorage.setItem("todos", JSON.stringify(todos));
   }
 
 
 
  function removeTodo(event) {
-      const foundIndex = todos.findIndex(todo => todo.id == event.target.id);
+      const foundIndex = todos.findIndex(todo => todo.id === event.target.id);
       let listToSplice = [...todos];
       listToSplice.splice(foundIndex, 1);
       setAllTodos(listToSplice);
@@ -48,11 +45,11 @@ export default function App() {
   function lineText(event){
     const foundIndex = todos.findIndex(todo => todo.id == event.target.id);
 
-    if(todos[foundIndex].status == "done"){
+    if(todos[foundIndex].status === "done"){
       todos[foundIndex].status = "open";
       setAllTodos(todos);
       setCounter(count+1);
-    } else if(todos[foundIndex].status == "open"){
+    } else if(todos[foundIndex].status === "open"){
       todos[foundIndex].status = "done";
       setAllTodos(todos);
       setCounter(count+1); 

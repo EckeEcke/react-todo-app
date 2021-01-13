@@ -8,12 +8,12 @@ export default function Navigation(){
     const [burgerBackground, toggleBurger] = useState("hamburger");
 
     function showMenu(event){
-        if (menuShown == "no-show") {
+        if (menuShown === "no-show") {
         toggleShowMenu("show-menu");
         toggleBurger("greenburger");
         }
         
-        if(menuShown == "show-menu"){
+        if(menuShown === "show-menu"){
         toggleShowMenu("no-show");
         toggleBurger("hamburger");
         }
