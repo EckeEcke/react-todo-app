@@ -9,28 +9,15 @@ export default function App() {
   
 
   const [todos, setAllTodos] = useState([]);
-  const [text, setInput] = useState("");
   const [todoID, setID] = useState(0);
 
 
-  function updateInput(event){
-         setInput(event.target.value);
-    }
-
-  const getInput = event => {
-        event.preventDefault();
-        if (text.length>0){
-          addTodo({text: text, isOpen: true, id: todoID});
-          setInput("");
+  const addTodo = text => {
+      if (text.length>0){
+          setAllTodos(todos => [...todos, {text: text, isOpen: true, id: todoID}]);
           setID(todoID+1);
-        }
-    }
- 
-
-  const addTodo = newTodo => {
-    setAllTodos(todos => [...todos, newTodo]);
+      }
   }
-
 
 
  function removeTodo(event) {
@@ -62,7 +49,7 @@ export default function App() {
 
           <br></br>
           
-          <Form text = {text} getInput = {getInput} updateInput = {updateInput}  />
+          <Form addTodo = {addTodo} />
 
 
           
