@@ -4,8 +4,8 @@ import { faTrash, faCheck } from '@fortawesome/free-solid-svg-icons';
 
 export default function Todolist(props){
 
-    const openTodos = props.todos.filter(todo => todo.status === "open");
-    const doneTodos = props.todos.filter(todo => todo.status === "done");
+    const openTodos = props.todos.filter(todo => todo.isOpen);
+    const doneTodos = props.todos.filter(todo => !todo.isOpen);
 
 
     return(
@@ -33,7 +33,7 @@ export default function Todolist(props){
                   
                   return(
                     <li key={index} id={openTodo.id} className="todo-listitem">
-                      <button  className={openTodo.status}  id={openTodo.id} onClick={props.lineText}>{openTodo.text}</button>
+                      <button  className={openTodo.isOpen ? "open" : "done"}  id={openTodo.id} onClick={props.lineText}>{openTodo.text}</button>
                       <button  className="delete-BTN" id={openTodo.id} onClick={props.removeTodo}><FontAwesomeIcon icon={faTrash} color="grey" /></button>
                     </li>
                   )}  
@@ -50,7 +50,7 @@ export default function Todolist(props){
                   
                   return(
                     <li key={index} id={filteredTodo.id} className="todo-listitem">
-                      <button  className={filteredTodo.status} id={filteredTodo.id} onClick={props.lineText}>{filteredTodo.text}</button>
+                      <button  className={filteredTodo.isOpen ? "open" : "done"} id={filteredTodo.id} onClick={props.lineText}>{filteredTodo.text}</button>
                       <button  className="delete-BTN" id={filteredTodo.id} onClick={props.removeTodo}><FontAwesomeIcon icon={faTrash} color="grey" /></button>
                     </li>
                   )}  

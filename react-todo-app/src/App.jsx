@@ -1,8 +1,8 @@
 import React, {useState} from "react";
 import './App.css';
-import Navigation from "./Components/Navigation.js";
-import Form from "./Components/Form.js";
-import Todolist from "./Components/Todolist.js";
+import Navigation from "./Components/Navigation.jsx";
+import Form from "./Components/Form.jsx";
+import Todolist from "./Components/Todolist.jsx";
 
 
 export default function App() {
@@ -21,7 +21,7 @@ export default function App() {
   const getInput = event => {
         event.preventDefault();
         if (text.length>0){
-          addTodo({text: text, status: "open", id: todoID});
+          addTodo({text: text, isOpen: true, id: todoID});
           setInput("");
           setID(todoID+1);
         }
@@ -46,20 +46,10 @@ export default function App() {
 
   function lineText(event){
     const foundIndex = todos.findIndex(todo => todo.id == event.currentTarget.id);
-
-    if(todos[foundIndex].status === "done"){
-      todos[foundIndex].status = "open";
-      setAllTodos(todos);
-      setCounter(count+1);
-    } else if(todos[foundIndex].status === "open"){
-      todos[foundIndex].status = "done";
-      setAllTodos(todos);
-      setCounter(count+1); 
-    }
+    todos[foundIndex].isOpen = !todos[foundIndex].isOpen
+    setAllTodos(todos);
+    setCounter(count+1);
 }
-
-
-
 
   return (
     <div className="App">
