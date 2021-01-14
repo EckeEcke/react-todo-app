@@ -11,7 +11,6 @@ export default function App() {
   const [todos, setAllTodos] = useState([]);
   const [text, setInput] = useState("");
   const [todoID, setID] = useState(0);
-  const [count, setCounter] = useState(0);
 
 
   function updateInput(event){
@@ -47,8 +46,7 @@ export default function App() {
   function lineText(event){
     const foundIndex = todos.findIndex(todo => todo.id == event.currentTarget.id);
     todos[foundIndex].isOpen = !todos[foundIndex].isOpen
-    setAllTodos(todos);
-    setCounter(count+1);
+    setAllTodos([...todos]);
 }
 
   return (
@@ -69,7 +67,7 @@ export default function App() {
 
           
           {todos.length>0 &&
-              <Todolist todos = {todos} count = {count+1} lineText = {lineText} removeTodo = {removeTodo} />
+              <Todolist todos = {todos} lineText = {lineText} removeTodo = {removeTodo} />
             }
           
           </center>
