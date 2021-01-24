@@ -88,7 +88,7 @@ label {
   padding: 10px; 
   color: white;
   text-decoration: none;
-  background-color: #f9812a;
+  background-image: linear-gradient(to right, #eea800, #eea849);
   opacity: 0.95;
 }
 
@@ -98,8 +98,8 @@ label {
   padding: 10px; 
   color: white;
   text-decoration: line-through;
-  background-color: limegreen;
-  opacity: 0.6;
+  background-image: linear-gradient(to left, #a8e000, #a8e063);
+  opacity: 0.8;
 }
 
 .completion-div {
@@ -116,7 +116,21 @@ label {
   background: none; 
   height: 40px; 
   font-size: 1.6em;
-  padding-left: 4px
+  padding-left: 4px;
+}
+
+.delete-list-BTN {
+  background-image: linear-gradient(to right, #00dbde, #00dddd);
+  opacity: 0.95;
+  min-width: 200px; 
+  border-style: none; 
+  padding: 10px; 
+  color: white;
+  transition: 0.3s;
+}
+
+.delete-list-BTN:hover {
+  transform: scale(1.1);
 }
 
 /*Navigation*/
