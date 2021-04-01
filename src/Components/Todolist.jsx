@@ -48,13 +48,13 @@ export default function Todolist(props) {
 
         <h3>Done</h3>
 
-        {doneTodos.map((filteredTodo, index) => {
+        {doneTodos.map((doneTodo, index) => {
 
           return (
 
-            <li key={index} id={filteredTodo.id} className="todo-listitem">
-              <button className={filteredTodo.isOpen ? "open" : "done"} id={filteredTodo.id} onClick={props.lineText}>{filteredTodo.text}</button>
-              <button className="delete-BTN" id={filteredTodo.id} onClick={props.removeTodo}><FontAwesomeIcon icon={faTrash} color="grey" /></button>
+            <li key={index} id={doneTodo.id} className="todo-listitem">
+              <button className={doneTodo.isOpen ? "open" : "done"} id={doneTodo.id} onClick={props.lineText}>{doneTodo.text}</button>
+              <button className="delete-BTN" id={doneTodo.id} onClick={props.removeTodo}><FontAwesomeIcon icon={faTrash} color="grey" /></button>
             </li>
 
           )

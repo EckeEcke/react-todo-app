@@ -48,6 +48,18 @@ export default function Navigation(){
             <li>
               <a href="https://adoring-galileo-71fde2.netlify.app/">React Todo App</a>
             </li>
+
+        <li>
+          <a href="newgame.html">Drawing App</a>
+        </li>
+ 
+        <li>
+          <a href="templelooter.html">Temple Looter</a>
+        </li>
+
+        <li>
+          <a href="https://nervous-elion-4e903f.netlify.app/" target="_blank">Vue Meal Planner</a>
+        </li>
           </ul>
         </div>
 

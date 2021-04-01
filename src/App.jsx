@@ -88,7 +88,7 @@ export default function App() {
         <br></br>
         <center>
 
-          <h1 style={{ fontSize: "24pt" }}>Todo List</h1>
+          <h1>Todo List</h1>
 
           <br></br>
 
