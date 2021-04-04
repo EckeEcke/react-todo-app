@@ -44,10 +44,6 @@ export default function Navigation() {
           <li>
             <a href="https://eckeecke.github.io/pong.html">JS Pong</a>
           </li>
-          
-          <li>
-            <a href="newgame.html">Drawing App</a>
-          </li>
 
           <li>
             <a href="templelooter.html">Temple Looter</a>
